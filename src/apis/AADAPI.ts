@@ -1,4 +1,4 @@
- import { AADRequestAPI } from "./AADRequestAPI";
+import { AADRequestAPI } from "./AADRequestAPI";
 import * as querystring from "querystring";
 import * as config from "config";
 import * as jwt from "jsonwebtoken";
