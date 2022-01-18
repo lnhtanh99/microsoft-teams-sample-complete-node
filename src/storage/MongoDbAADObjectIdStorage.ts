@@ -85,15 +85,15 @@ export class MongoDbAADObjectIdStorage {
             }
 
             let filter = { "_id": entry._id };
-            let document = {
-                teamId: context.teamId,
-                channelId: context.channelId,
-                data: data.channelData,
-            };
-            let document = {
-                token: tokens.token,
-                refreshToken: tokens.refreshToken,
-            };
+            // let document = {
+            //     teamId: context.teamId,
+            //     channelId: context.channelId,
+            //     data: data.channelData,
+            // };
+            // let document = {
+            //     token: tokens.token,
+            //     refreshToken: tokens.refreshToken,
+            // };
             await this.botStateCollection.updateOne(filter, entry, { upsert: true });
             // await this.close();
         // }
@@ -108,15 +108,15 @@ export class MongoDbAADObjectIdStorage {
             }
 
             let filter = { "_id": "aadObjectId:" + aadObjectId };
-            // let document = {
-            //     teamId: context.teamId,
-            //     channelId: context.channelId,
-            //     data: data.channelData,
-            // };
-            // let document = {
-            //     token: tokens.token,
-            //     refreshToken: tokens.refreshToken,
-            // };
+            let document = {
+                teamId: context.teamId,
+                channelId: context.channelId,
+                data: data.channelData,
+            };
+            let document = {
+                token: tokens.token,
+                refreshToken: tokens.refreshToken,
+            };
             await this.botStateCollection.deleteMany(filter);
             // await this.close();
         // }
