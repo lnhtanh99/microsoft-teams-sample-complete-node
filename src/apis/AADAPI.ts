@@ -10,7 +10,7 @@ export interface ValidatedAADInformation {
 
 export class AADAPI {
 
-    private requestAPI: AADRequestAPI;;
+    private requestAPI: AADRequestAPI;
 
     constructor () {
         this.requestAPI = new AADRequestAPI();
