@@ -55,10 +55,10 @@ export class AADRequestAPI {
 
     // tslint:disable-next-line:member-ordering
     public async getAsync(url: string, headers: any, body: any): Promise<any> {
-        // let args = await this.getAccessToken(session);
-        // if (!args) {
-        //     return null;
-        // }
+        let args = await this.getAccessToken(session);
+        if (!args) {
+            return null;
+        }
 
         return new Promise((resolve, reject) => {
             this.get(url, headers, body, (err, result) => {
