@@ -1,5 +1,5 @@
 import * as builder from "botbuilder";
-// Sửa lần 4
+// Sửa lần 5
 // Set the text field on message events to "adaptive card", if request is from an adaptive card
 export class AdaptiveCardSubmitActionHandler implements builder.IMiddlewareMap {
 
