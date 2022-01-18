@@ -18,34 +18,34 @@ export class AADRequestAPI {
         // do nothing
     }
 
-    // private isUserValidated(session: builder.Session): boolean {
-    //     let isValidated = session.userData &&
-    //         session.userData.vstsAuth &&
-    //         session.userData.vstsAuth.isValidated;
+    private isUserValidated(session: builder.Session): boolean {
+        let isValidated = session.userData &&
+            session.userData.vstsAuth &&
+            session.userData.vstsAuth.isValidated;
 
-    //     if (!isValidated) {
-    //         session.send(Strings.need_to_log_in);
-    //         session.beginDialog(DialogIds.VSTSLogInDialogId);
-    //     }
+        if (!isValidated) {
+            session.send(Strings.need_to_log_in);
+            session.beginDialog(DialogIds.VSTSLogInDialogId);
+        }
 
-    //     return isValidated;
-    // }
+        return isValidated;
+    }
 
-    // private async getAccessToken(session: builder.Session): Promise<any> {
-    //     if (!this.isUserValidated(session)) {
-    //         return null;
-    //     }
+    private async getAccessToken(session: builder.Session): Promise<any> {
+        if (!this.isUserValidated(session)) {
+            return null;
+        }
 
-    //     let auth = new VSTSTokenOAuth2API();
-    //     // sets tokens in session.userData.vstsAuth.token and session.userData.vstsAuth.refreshToken
-    //     await auth.refreshTokens(session);
+        let auth = new VSTSTokenOAuth2API();
+        // sets tokens in session.userData.vstsAuth.token and session.userData.vstsAuth.refreshToken
+        await auth.refreshTokens(session);
 
-    //     session.sendTyping();
+        session.sendTyping();
 
-    //     let args = { vsts_access_token: session.userData.vstsAuth.token };
+        let args = { vsts_access_token: session.userData.vstsAuth.token };
 
-    //     return args;
-    // };
+        return args;
+    };
 
     // Make a GET request to API.
     // Syntax: .get(uri, [query], callback)
