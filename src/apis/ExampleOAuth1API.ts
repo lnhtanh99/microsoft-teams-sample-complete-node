@@ -121,12 +121,12 @@ export class ExampleOAuth1API {
         };
 
         let requestCallback = function (err: any, response: any, body: any): void {
-            if (!err && response.statusCode >= 400) {
-                err = new Error(body);
-                err.statusCode = response.statusCode;
-                err.responseBody = body;
-                err.statusMessage = http.STATUS_CODES[response.statusCode];
-            }
+            // if (!err && response.statusCode >= 400) {
+            //     err = new Error(body);
+            //     err.statusCode = response.statusCode;
+            //     err.responseBody = body;
+            //     err.statusMessage = http.STATUS_CODES[response.statusCode];
+            // }
 
             callback(err, body);
         };
