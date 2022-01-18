@@ -132,13 +132,13 @@ export class MongoDbAADObjectIdStorage {
         }
     }
 
-    // Returns a promise that is resolved when this instance is initialized
-    // private initialize(): Promise<void> {
-    //     if (!this.initializePromise) {
-    //         this.initializePromise = this.initializeWorker();
-    //     }
-    //     return this.initializePromise;
-    // }
+    Returns a promise that is resolved when this instance is initialized
+    private initialize(): Promise<void> {
+        if (!this.initializePromise) {
+            this.initializePromise = this.initializeWorker();
+        }
+        return this.initializePromise;
+    }
 
     // Initialize this instance
     private async initialize(): Promise<void> {
