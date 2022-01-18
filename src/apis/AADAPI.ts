@@ -24,7 +24,7 @@ export class AADAPI {
 
         let clientId = config.get("bot.botId");
         // let clientSecret = config.get("bot.botPassword");
-        // let authorityHostUrl = "https://login.windows.net";;
+        // let authorityHostUrl = "https://login.windows.net";
         // let tenant = "####";
         // let authorityUrl = authorityHostUrl + "/" + tenant;
         let redirectUri = config.get("app.baseUri") + "/api/success";
