@@ -108,15 +108,15 @@ export class MongoDbAADObjectIdStorage {
             }
 
             let filter = { "_id": "aadObjectId:" + aadObjectId };
-            // let document = {
-            //     teamId: context.teamId,
-            //     channelId: context.channelId,
-            //     data: data.channelData,
-            // };
-            // let document = {
-            //     token: tokens.token,
-            //     refreshToken: tokens.refreshToken,
-            // };
+            let document = {
+                teamId: context.teamId,
+                channelId: context.channelId,
+                data: data.channelData,
+            };
+            let document = {
+                token: tokens.token,
+                refreshToken: tokens.refreshToken,
+            };
             await this.botStateCollection.deleteMany(filter);
             // await this.close();
         // }
@@ -132,13 +132,13 @@ export class MongoDbAADObjectIdStorage {
         }
     }
 
-    // Returns a promise that is resolved when this instance is initialized
-    // private initialize(): Promise<void> {
-    //     if (!this.initializePromise) {
-    //         this.initializePromise = this.initializeWorker();
-    //     }
-    //     return this.initializePromise;
-    // }
+    Returns a promise that is resolved when this instance is initialized
+    private initialize(): Promise<void> {
+        if (!this.initializePromise) {
+            this.initializePromise = this.initializeWorker();
+        }
+        return this.initializePromise;
+    }
 
     // Initialize this instance
     private async initialize(): Promise<void> {

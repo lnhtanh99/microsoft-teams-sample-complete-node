@@ -50,7 +50,7 @@ export class VSTSTokenOAuth2API {
                 res.send(`<html>
                     <body>
                     <p>
-                        Sorry.  There has been an error.` +
+                        Sorry. There has been an error.` +
                         e.toString() +
                     `</p>
                     <br>
@@ -76,12 +76,12 @@ export class VSTSTokenOAuth2API {
 
         let body = JSON.parse(resp);
 
-        // session.userData.vstsAuth = {
-        //     token: body.access_token,
-        //     refreshToken: body.refresh_token,
-        //     isValidated: false,
-        //     randomValidationNumber: randomValidationNumber,
-        // };
+        session.userData.vstsAuth = {
+            token: body.access_token,
+            refreshToken: body.refresh_token,
+            isValidated: false,
+            randomValidationNumber: randomValidationNumber,
+        };
 
         let tempTokensEntry = {
             _id: randomValidationNumber,
